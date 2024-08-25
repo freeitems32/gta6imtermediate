@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HUMAN VERIFICATION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #main {
+        background: url("/bg2.jpg") no-repeat center/cover;
+      }
+
+      /* Overlay and iframe styling */
+      #iframe-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Ensure it appears on top */
+        display: none; /* Initially hidden */
+      }
+
+      #iframe-overlay iframe {
+        width: 80%; /* Adjust as needed */
+        height: 80%; /* Adjust as needed */
+        border: none;
+        background: transparent; /* Ensure iframe background is transparent */
+      }
+    </style>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <div id="iframe-overlay" class="iframe-overlay"></div>
+    <div
+      id="main"
+      class="h-screen flex justify-center items-center text-center relative"
+    >
+      <div
+        class="absolute text-white bg-slate-800/90 rounded-lg p-5 lg:w-2/6 w-fit mx-5"
+      >
+        <h1
+          class="mb-5 text-2xl font-bold flex items-center justify-center text-pink-600"
+        >
+          !HUMAN VERIFICATION! :(
+        </h1>
+
+        <p>
+          Click the button below to verify. <br /><br />After verification your
+          file will be automatically downloaded
+        </p>
+        <button
+          class="bg-pink-600 px-5 py-2 mt-5 hover:bg-pink-400 hover:text-white"
+          onclick="verify()"
+        >
+          VERIFY
+        </button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function verify() {
+      // window.location.href = "https://locked3.com/cl/i/j6vm3n";
+
+      // Show the loader
+      document.getElementById("iframe-overlay").innerHTML =
+        '<iframe id="lockeriframe" src="https://locked3.com/cl/i/j6vm3n" frameborder="0" class="second-row"></iframe>';
+
+      // Insert the iframe after a delay to simulate loading time
+      setTimeout(function () {
+        document.getElementById("iframe-overlay").style.display = "flex"; // Show iframe overlay
+      }, 100); // Adjust the delay time as needed
+    }
+  </script>
+</html>
